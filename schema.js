@@ -18,6 +18,7 @@ input ProductInput {
 type Mutation {
     createProduct(input: ProductInput) : Product
     updateProduct(_id: ID!, input: ProductInput): Product
+    deleteProduct(_id: ID!) : Product
 }
 `;
 const schema = makeExecutableSchema({
