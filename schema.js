@@ -8,6 +8,7 @@ type Product {
     qty: Int
 }
 type Query {
+    getProduct(_id: ID!): Product
     allProducts: [Product]
 }
 input ProductInput {
@@ -16,6 +17,7 @@ input ProductInput {
 }
 type Mutation {
     createProduct(input: ProductInput) : Product
+    updateProduct(_id: ID!, input: ProductInput): Product
 }
 `;
 const schema = makeExecutableSchema({
