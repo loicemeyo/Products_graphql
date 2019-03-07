@@ -15,6 +15,13 @@ export const resolvers = {
             input
         }) {
             return await Product.create(input);
+        },
+        async deleteProduct(root, {
+            _id
+        }) {
+            return await Product.findOneAndRemove({
+                _id
+            });
         }
     },
     asnyc updateProduct(root, {
